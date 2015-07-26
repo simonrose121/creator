@@ -1,0 +1,19 @@
+{
+  "name": "creator",
+  "version": "0.0.1",
+  "description": "A visual programming environment designed for children aged 5-7.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/simonrose121/creator.git"
+  },
+  "author": "Simon Rose",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/simonrose121/creator/issues"
+  },
+  "homepage": "https://github.com/simonrose121/creator"
+}
