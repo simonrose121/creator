@@ -15,5 +15,11 @@
   "bugs": {
     "url": "https://github.com/simonrose121/creator/issues"
   },
-  "homepage": "https://github.com/simonrose121/creator"
+  "homepage": "https://github.com/simonrose121/creator",
+  "dependencies": {
+    "body-parser": "^1.13.3",
+    "express": "^4.13.2",
+    "method-override": "^2.3.5",
+    "mongoose": "^4.1.0"
+  }
 }
