@@ -2,6 +2,7 @@ doctype html
 html(ng-app='creator-app')
   head
     title="creator"
+    link(rel="icon" href="img/favicon.png" type="image/png")
     style(href="./libs/bootstrap/dist/css/bootstrap.min.css")
     script(src="./libs/angular/angular.min.js")
     script(src="./libs/angular-route/angular-route.min.js")
@@ -9,4 +10,5 @@ html(ng-app='creator-app')
     script(src="./js/controllers/creator-controller.js")
   body(ng-controller='creatorController')
     #content
-      p I am a jade page
+      .block
+      .pad
