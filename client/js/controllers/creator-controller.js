@@ -1,3 +1,3 @@
-app.controller('creatorController', ['$scope', '$http', function($scope, $http) {
-  
+app.controller('creator-controller', ['$scope', '$http', function($scope, $http) {
+
 }]);

@@ -19,6 +19,9 @@
   "dependencies": {
     "body-parser": "^1.13.3",
     "express": "^4.13.2",
+    "grunt": "^0.4.5",
+    "grunt-contrib-less": "^1.0.1",
+    "grunt-contrib-watch": "^0.6.1",
     "jade": "^1.11.0",
     "method-override": "^2.3.5",
     "mongoose": "^4.1.0"
