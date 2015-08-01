@@ -26,6 +26,13 @@ app.get('/', function(req, res) {
   res.render(__dirname + '/client/views/index.jade');
 })
 
+// static files
+app.use('/js', express.static(__dirname + '/client/js'));
+app.use('/libs', express.static(__dirname + '/client/libs'));
+app.use('/css', express.static(__dirname + '/client/css'));
+app.use('/img', express.static(__dirname + '/client/img'));
+app.use('/font', express.static(__dirname + '/client/font'));
+
 app.listen(port);
 
 // expose app
