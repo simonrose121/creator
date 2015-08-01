@@ -1,4 +1,23 @@
 body {
+  font-family: 'Roboto';
+}
+#nav-bar {
+  width: 100%;
   background-color: #00bcd4;
-  color: #000;
+  position: fixed;
+  top: 0;
+}
+#nav-bar h1 {
+  margin: 0;
+  color: #ffffff;
+}
+#nav-bar .logo {
+  margin-left: 20px;
+}
+.editor {
+  width: 70%;
+  border-right: #000 solid thin;
+}
+.block {
+  width: 30%;
 }

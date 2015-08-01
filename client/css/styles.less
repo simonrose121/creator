@@ -1,16 +1,30 @@
 @import "variables.less";
 
 body {
-  background-color: @primary-colour;
-  color: #000;
+  font-family: 'Roboto';
 }
 
-.block {
-  
+#nav-bar {
+  width: 100%;
+  background-color: @primary-colour;
+  position: fixed;
+  top: 0;
+  h1 {
+    margin: 0;
+    color: @primary-text-color;
+  }
+  .logo {
+    margin-left: 20px;
+  }
 }
 
 .editor {
+  width: 70%;
+  border-right: #000 solid thin;
+}
 
+.block {
+  width: 30%;
 }
 
 .input {
