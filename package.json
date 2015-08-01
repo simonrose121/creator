@@ -1,6 +1,6 @@
 {
   "name": "creator",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "A visual programming environment designed for children aged 5-7.",
   "main": "app.js",
   "scripts": {
