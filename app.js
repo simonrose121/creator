@@ -12,15 +12,19 @@ var port = process.env.PORT || 8080;
 // connect to database
 mongoose.connect(db.url);
 
+// set view engine
+app.set('view engine', 'jade');
+
 // get POST parameter database
 app.use(bodyParser.json());
 app.use(bodyParser.json({ type: 'application/vnd.api+json '}));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(methodOverride('X-HTTP-Method-Override'));
-app.use(express.static(__dirname + '/public'));
 
 // routes
-require('./app/routes')(app);
+app.get('/', function(req, res) {
+  res.render(__dirname + '/client/views/index.jade');
+})
 
 app.listen(port);
 
