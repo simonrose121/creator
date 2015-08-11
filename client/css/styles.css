@@ -1,23 +1,48 @@
 body {
   font-family: 'Roboto';
+  box-sizing: border-box;
 }
 #nav-bar {
   width: 100%;
   background-color: #00bcd4;
   position: fixed;
   top: 0;
+  height: 75px;
 }
 #nav-bar h1 {
   margin: 0;
+  line-height: 75px;
   color: #ffffff;
 }
 #nav-bar .logo {
   margin-left: 20px;
 }
+#content {
+  margin-top: 75px;
+  width: 100%;
+  float: left;
+}
 .editor {
   width: 70%;
-  border-right: #000 solid thin;
+  float: right;
 }
-.block {
+.program {
   width: 30%;
+  float: left;
+  border-right: #000 solid thin;
+  height: 100vh;
+  margin-left: 20px;
+}
+.program ul {
+  list-style: none;
+}
+.input {
+  bottom: 0;
+  position: absolute;
+  width: 100%;
+}
+.input input {
+  height: 70px;
+  width: 100%;
+  font-size: 3em;
 }

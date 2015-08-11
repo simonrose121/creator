@@ -8,7 +8,15 @@ html(ng-app='creator-app')
       .logo
         h1 creator
     #content
-      .block
+      .program
+        h2 program
+        ul
+          li(ng-repeat='instruction in instructions')
+            div {{ instruction }}
+        .input
+          form(name='input' ng-submit='submit()')
+            input(type='text' ng-model='text')
+            input(type='submit' id='submit' class='ng-hide')
       .pad
-      .input
-        form
+      
+          

@@ -2,6 +2,7 @@
 
 body {
   font-family: 'Roboto';
+  box-sizing: border-box;
 }
 
 #nav-bar {
@@ -9,8 +10,10 @@ body {
   background-color: @primary-colour;
   position: fixed;
   top: 0;
+  height: 75px;
   h1 {
     margin: 0;
+    line-height: 75px;
     color: @primary-text-color;
   }
   .logo {
@@ -18,15 +21,37 @@ body {
   }
 }
 
-.editor {
-  width: 70%;
-  border-right: #000 solid thin;
+#content {
+  margin-top: 75px;
+  width: 100%;
+  float: left;
 }
 
-.block {
+.editor {
+  width: 70%;
+  float: right;
+}
+
+.program {
   width: 30%;
+  float: left;
+  border-right: #000 solid thin;
+  height: 100vh;
+  margin-left: 20px;
+
+  ul {
+    list-style: none;
+  }
 }
 
 .input {
+  bottom: 0;
+  position: absolute;
+  width: 100%;
 
+  input {
+    height: 70px;
+    width: 100%;
+    font-size: 3em;
+  }
 }
