@@ -46,3 +46,10 @@ body {
   width: 100%;
   font-size: 3em;
 }
+#tor {
+  position: absolute;
+  left: 50%;
+  right: 50%;
+  top: 50%;
+  bottom: 50%;
+}

@@ -1,1 +1,1 @@
-var app = angular.module('creator-app', ['ngResource']);
+var app = angular.module('creatorApp', ['ngResource']);
