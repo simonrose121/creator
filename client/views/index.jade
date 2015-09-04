@@ -18,7 +18,7 @@ html(ng-app='creatorApp')
             a(class='remove' ng-click='remove($index)')
         .feedback(ng-bind='feedback')
       .pad
-        img(id='tor' src='img/jumpy.png')
+        img(id='tor' src='img/jumpy.png' data-drag='true' jqyoui-draggable)
       .input
         form(name='input' ng-submit='submit()')
           input(type='text' ng-model='text' placeholder='tell me what to do!')
