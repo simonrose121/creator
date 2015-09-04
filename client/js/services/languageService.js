@@ -31,15 +31,17 @@ app.service('languageService', function() {
             left: distanceString
         }, 1000);
         break;
+      default:
+        return true;
     };
   };
 
   this.initialCommand = function(command) {
     switch (command) {
       case "start":
-        return true;
-      default:
         return false;
+      default:
+        return true;
     }
   }
 
@@ -57,17 +59,17 @@ app.service('languageService', function() {
 
       // get first instruction
       if (i == 0) {
-        if (!this.initialCommand(command)) {
-            syntaxError = true;
-            // break now so nothing else gets done
-            break;
+        syntaxError = this.initialCommand(command);
+        if (syntaxError) {
+          // break before any other instructions can be done
+          break;
         }
       }
 
       // instruction
       switch (instruction) {
         case "move":
-          this.move(command, distance);
+          syntaxError = this.move(command, distance);
           break;
       }
     }
