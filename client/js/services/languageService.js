@@ -34,21 +34,31 @@ app.service('languageService', function() {
     };
   };
 
+  this.initialCommand = function(command) {
+    switch (command) {
+      case "start":
+        return true;
+    }
+  }
+
   this.run = function(instructions) {
-    console.log("instructions are " + instructions);
     for (var i = 0; i < instructions.length; i++) {
       var instruction = instructions[i];
       var ins = instruction.split(/\b(?:a|the|was|\s)+\b/i)
 
       // initial setup
       var instruction = ins[0];
-      var direction = ins[1];
+      var command = ins[1];
       var distance = ins[2];
 
       // instruction
       switch (instruction) {
+        case "on":
+          this.initialCommand(command);
+          break;
+
         case "move":
-          this.move(direction, distance);
+          this.move(command, distance);
           break;
       }
     }
