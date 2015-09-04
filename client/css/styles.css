@@ -7,18 +7,27 @@ body {
   background-color: #00bcd4;
   position: fixed;
   top: 0;
-  height: 75px;
+  height: 40px;
 }
 #nav-bar h1 {
   margin: 0;
-  line-height: 75px;
+  line-height: 40px;
   color: #ffffff;
 }
 #nav-bar .logo {
+  float: left;
   margin-left: 20px;
 }
+#nav-bar .settings {
+  float: right;
+  margin: 2px;
+  width: 38px;
+  height: 38px;
+  background: url('/img/settings.png') no-repeat;
+  background-size: 35px 35px;
+}
 #content {
-  margin-top: 75px;
+  margin-top: 40px;
   width: 100%;
   float: left;
 }
@@ -31,20 +40,51 @@ body {
   float: left;
   border-right: #000 solid thin;
   height: 100vh;
+  background: #000;
+  color: #FFF;
+}
+.program .title {
+  float: left;
   margin-left: 20px;
 }
 .program ul {
   list-style: none;
+  clear: both;
+  float: left;
+  margin: 0;
+  padding-left: 20px;
+}
+.program ul li {
+  padding-top: 10px;
+}
+.program a.run {
+  float: right;
+  margin: 20px 10px 0 0;
+  width: 38px;
+  height: 38px;
+  background: url('/img/play.png') no-repeat;
+  background-size: 35px 35px;
 }
 .input {
+  position: fixed;
   bottom: 0;
-  position: absolute;
-  width: 100%;
+  top: auto;
+  width: 100vw;
+  display: block;
 }
 .input input {
   height: 70px;
   width: 100%;
   font-size: 3em;
+}
+.pad {
+  background: url('/img/default-background.jpeg') no-repeat;
+  background-size: cover;
+  position: absolute;
+  right: 0;
+  height: 100vh;
+  width: 71vw;
+  z-index: -1;
 }
 #tor {
   position: absolute;

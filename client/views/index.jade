@@ -7,18 +7,20 @@ html(ng-app='creatorApp')
     #nav-bar
       .logo
         h1 creator
+      .settings
     #content
       .program
-        h2 program
-        button(ng-click='run()') Run
+        .title
+          h2 program
+        a(class='run' ng-click='run()')
         ul
           li(ng-repeat='instruction in instructions')
             div {{ instruction }}
-        .input
-          form(name='input' ng-submit='submit()')
-            input(type='text' ng-model='text')
-            input(type='submit' id='submit' class='ng-hide')
       .pad
-        img(id='tor' src='../img/favicon.png')
+        img(id='tor' src='img/jumpy.png')
+      .input
+        form(name='input' ng-submit='submit()')
+          input(type='text' ng-model='text' placeholder='tell me what to do!')
+          input(type='submit' id='submit' class='ng-hide')
       
           
