@@ -38,10 +38,14 @@ app.service('languageService', function() {
     switch (command) {
       case "start":
         return true;
+      default:
+        return false;
     }
   }
 
   this.run = function(instructions) {
+    var syntaxError = false;
+
     for (var i = 0; i < instructions.length; i++) {
       var instruction = instructions[i];
       var ins = instruction.split(/\b(?:a|the|was|\s)+\b/i)
@@ -51,16 +55,25 @@ app.service('languageService', function() {
       var command = ins[1];
       var distance = ins[2];
 
+      // get first instruction
+      if (i == 0) {
+        if (!this.initialCommand(command)) {
+            syntaxError = true;
+            // break now so nothing else gets done
+            break;
+        }
+      }
+
       // instruction
       switch (instruction) {
-        case "on":
-          this.initialCommand(command);
-          break;
-
         case "move":
           this.move(command, distance);
           break;
       }
+    }
+
+    if (syntaxError) {
+      return syntaxError;
     }
   };
 });

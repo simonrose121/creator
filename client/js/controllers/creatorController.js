@@ -9,7 +9,15 @@ app.controller('creatorController', ['$scope', '$http', 'languageService', funct
       $scope.text = '';
     }
   };
+  $scope.remove = function(index) {
+    $scope.instructions.splice(index, 1);
+  }
   $scope.run = function() {
-    languageService.run($scope.instructions);
+    var error = languageService.run($scope.instructions);
+    if (error != null) {
+      $scope.feedback = "that wasn't quite right";
+    } else {
+      $scope.feedback = "";
+    }
   };
 }]);

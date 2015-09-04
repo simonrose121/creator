@@ -14,8 +14,9 @@ html(ng-app='creatorApp')
           h2 program
         a(class='run' ng-click='run()')
         ul
-          li(ng-repeat='instruction in instructions')
-            div {{ instruction }}
+          li(ng-repeat='instruction in instructions') {{ instruction }}
+            a(class='remove' ng-click='remove($index)')
+        .feedback(ng-bind='feedback')
       .pad
         img(id='tor' src='img/jumpy.png')
       .input
