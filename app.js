@@ -32,6 +32,7 @@ app.use('/libs', express.static(__dirname + '/client/libs'));
 app.use('/css', express.static(__dirname + '/client/css'));
 app.use('/img', express.static(__dirname + '/client/img'));
 app.use('/font', express.static(__dirname + '/client/font'));
+app.use('/views', express.static(__dirname + '/client/views'));
 
 app.listen(port);
 

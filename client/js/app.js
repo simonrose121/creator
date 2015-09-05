@@ -1,1 +1,1 @@
-var app = angular.module('creatorApp', ['ngResource', 'ngDragDrop']);
+var app = angular.module('creatorApp', ['ngResource', 'ngDragDrop', 'angularModalService']);
