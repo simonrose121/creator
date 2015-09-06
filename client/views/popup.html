@@ -3,6 +3,9 @@
     Add another character!
   </div>
   <div class="characters">
-    <img id="dog" src="/img/dog.png" ng-click="addCharacter('dog')">
+    <ul ng-repeat="character in characterSelection">
+      <li>
+        <img id="{{character.id}}" ng-src="{{character.src}}" ng-click="addCharacter(character.id)">
+      </li>
   </div>
 </div>
