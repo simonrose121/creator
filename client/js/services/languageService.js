@@ -5,28 +5,28 @@ app.service('languageService', function() {
     switch (direction) {
       case "up":
         var distanceString = "-=" + distance * 10;
-        $('#tor')
+        $('#bunny')
           .animate({
             top: distanceString
         }, 1000);
         break;
       case "down":
         var distanceString = "+=" + distance * 10;
-        $('#tor')
+        $('#bunny')
           .animate({
             top: distanceString
         }, 1000);
         break;
       case "left":
         var distanceString = "-=" + distance * 10;
-        $('#tor')
+        $('#bunny')
           .animate({
             left: distanceString
         }, 1000);
         break;
       case "right":
         var distanceString = "+=" + distance * 10;
-        $('#tor')
+        $('#bunny')
           .animate({
             left: distanceString
         }, 1000);

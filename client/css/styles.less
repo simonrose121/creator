@@ -125,8 +125,12 @@ body {
     cursor: pointer;
   }
 
-  #tor {
-    //TODO: position this based on drag and drop
+  li {
+    list-style: none;
+  }
+
+  #bunny {
+    //TODO: position this based on drag and drop on initial
     position: absolute;
     left: 50%;
     right: 50%;
@@ -141,7 +145,17 @@ body {
 
 #select {
   position: absolute;
-  width: 80vh;
-  height: 70vh;
+  z-index: 15;
+  top: 12%;
+  left: 10%;
+  margin: 0 auto;
+  width: 80%;
+  height: 70%;
   background: #FFF;
+  box-shadow: 2px 2px 47px -9px rgba(0,0,0,1);
+  padding: 10px;
+
+  .title {
+    font-size: 3em;
+  }
 }

@@ -115,19 +115,31 @@ body {
   background-size: 35px 35px;
   cursor: pointer;
 }
-.pad #tor {
+.pad li {
+  list-style: none;
+}
+.pad #bunny {
   position: absolute;
   left: 50%;
   right: 50%;
   top: 50%;
   bottom: 50%;
 }
-.pad #tor img {
+.pad #bunny img {
   cursor: pointer;
 }
 #select {
   position: absolute;
-  width: 80vh;
-  height: 70vh;
+  z-index: 15;
+  top: 12%;
+  left: 10%;
+  margin: 0 auto;
+  width: 80%;
+  height: 70%;
   background: #FFF;
+  box-shadow: 2px 2px 47px -9px #000000;
+  padding: 10px;
+}
+#select .title {
+  font-size: 3em;
 }
