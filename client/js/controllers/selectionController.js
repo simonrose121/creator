@@ -1,4 +1,4 @@
-app.controller('optionsController', ['$scope', '$filter', 'close', function($scope, $filter, close) {
+app.controller('selectionController', ['$scope', '$filter', 'close', function($scope, $filter, close) {
   $scope.characterSelection = [];
 
   // character selection
@@ -6,7 +6,7 @@ app.controller('optionsController', ['$scope', '$filter', 'close', function($sco
   $scope.characterSelection.push({id: "dog", src: "/img/dog.png"})
 
   $scope.closeOptions = function() {
-    //close();
+    close();
   };
 
   $scope.addCharacter = function(charId) {

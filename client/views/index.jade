@@ -21,7 +21,7 @@ html(ng-app='creatorApp')
         .delete(id='delete-section' ng-show='isDragged' data-drop="true" jqyoui-droppable="{onDrop:'droppedOnDelete'}")
         a(class='add' ng-click='open()')
         li(ng-repeat='character in characters')
-          img(id='{{character.id}}' ng-src='{{character.src}}' data-drag='true' jqyoui-draggable="{onStart:'dragStart', onStop:'dragStop'}")
+          img(id='{{character.id}}' ng-src='{{character.src}}' data-drag='true' jqyoui-draggable="{onStart:'dragStart', onStop:'dragStop'}" ng-click='characterSelect(character.id)')
       .input
         form(name='input' ng-submit='submit()')
           input(type='text' ng-model='text' placeholder='tell me what to do!')

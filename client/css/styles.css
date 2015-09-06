@@ -152,7 +152,21 @@ body {
 }
 #select .title {
   font-size: 3em;
+  float: left;
+  width: 85%;
 }
 #select li {
   list-style: none;
+}
+#select li img {
+  cursor: pointer;
+}
+#select .close {
+  float: right;
+  margin: 2px;
+  width: 38px;
+  height: 38px;
+  background: url('/img/remove.png') no-repeat;
+  background-size: 35px 35px;
+  cursor: pointer;
 }

@@ -10,7 +10,7 @@ var db = require('./config/db');
 var port = process.env.PORT || 8080;
 
 // connect to database
-mongoose.connect(db.url);
+//mongoose.connect(db.url);
 
 // set view engine
 app.set('view engine', 'jade');

@@ -13,6 +13,16 @@ app.controller('creatorController', ['$scope', '$http', '$timeout', '$filter', '
     $scope.instructions.push("move up 10");
     $scope.instructions.push("move left 8");
 
+    // Private
+    function getCharacter(id) {
+      return $filter('filter')($scope.characters, {id: id});
+    };
+
+    function getCharacterIndex(character) {
+      return $scope.characters.indexOf(character);
+    };
+
+    // Public
     $scope.submit = function() {
       if ($scope.text) {
         $scope.instructions.push(this.text);
@@ -33,10 +43,9 @@ app.controller('creatorController', ['$scope', '$http', '$timeout', '$filter', '
     $scope.open = function() {
       ModalService.showModal({
         templateUrl: "/views/popup.html",
-        controller: "optionsController"
+        controller: "selectionController"
       }).then(function(modal) {
         modal.close.then(function(character) {
-          console.log("adding character " + character.id);
           if (character) {
             $timeout(function() {
               $scope.characters.push(character);
@@ -44,6 +53,13 @@ app.controller('creatorController', ['$scope', '$http', '$timeout', '$filter', '
           }
         });
       });
+    };
+
+    // TODO: character select
+    $scope.characterSelect = function(id) {
+      // show selection of element
+
+      // change program to apply methods to that character
     };
 
     // drag-drop methods
@@ -58,14 +74,17 @@ app.controller('creatorController', ['$scope', '$http', '$timeout', '$filter', '
       }, 0);
     };
     $scope.droppedOnDelete = function(item) {
-      var character = $filter('filter')($scope.characters, {id: item.toElement.id});
-      var index = $scope.characters.indexOf(character[0]);
-      console.log(index);
-      if (index != -1) {
-        $scope.characters.splice(index, 1);
+      if (item != null) {
+        var character = getCharacter(item.toElement.id);
+        var index = getCharacterIndex(character[0]);
+        if (index != -1) {
+          $scope.characters.splice(index, 1);
+        }
+        $timeout(function() {
+          $scope.isDragged = false;
+        }, 0);
       }
-      $timeout(function() {
-        $scope.isDragged = false;
-      }, 0);
     };
+
+
 }]);
