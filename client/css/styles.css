@@ -118,15 +118,8 @@ body {
 .pad li {
   list-style: none;
 }
-.pad #bunny {
-  position: absolute;
-  left: 50%;
-  right: 50%;
-  top: 50%;
-  bottom: 50%;
-}
-.pad #bunny img {
-  cursor: pointer;
+.pad .selected-character {
+  filter: drop-shadow(9px 9px 9px rgba(0, 0, 0, 0.3));
 }
 .pad #delete-section {
   position: absolute;
