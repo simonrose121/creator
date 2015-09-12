@@ -1,17 +1,16 @@
 app.controller('creatorController', ['$scope', '$http', '$timeout', '$filter', 'languageService', 'ModalService',
   function($scope, $http, $timeout, $filter, languageService, ModalService) {
     $scope.isDragged = false;
-    $scope.instructions = [];
     $scope.characters = [];
 
     // default character
-    $scope.characters.push({id: "bunny", src: "/img/bunny.png"});
+    $scope.characters.push({id: "bunny", src: "/img/bunny.png", ins:["on start", "move up 10", "move left 8"]});
 
     // starting instructions
     // TODO: Remove
-    $scope.instructions.push("on start");
-    $scope.instructions.push("move up 10");
-    $scope.instructions.push("move left 8");
+    // $scope.instructions.push("on start");
+    // $scope.instructions.push("move up 10");
+    // $scope.instructions.push("move left 8");
 
     // Private
     function getCharacter(id) {
@@ -22,10 +21,12 @@ app.controller('creatorController', ['$scope', '$http', '$timeout', '$filter', '
       return $scope.characters.indexOf(character);
     };
 
+    //$scope.selectedCharacter = getCharacter("bunny")[0];
+
     // Public
     $scope.submit = function() {
       if ($scope.text) {
-        $scope.instructions.push(this.text);
+        $scope.selectedCharacter.ins.push(this.text);
         $scope.text = '';
       }
     };
@@ -33,7 +34,12 @@ app.controller('creatorController', ['$scope', '$http', '$timeout', '$filter', '
       $scope.instructions.splice(index, 1);
     };
     $scope.run = function() {
-      var error = languageService.run($scope.instructions);
+      var error;
+      for(var i = 0; i < $scope.characters.length; i++) {
+         if(error == null){
+           error = languageService.run($scope.characters[i]);
+         }
+      }
       if (error != null) {
         $scope.feedback = "that wasn't quite right";
       } else {
@@ -58,8 +64,8 @@ app.controller('creatorController', ['$scope', '$http', '$timeout', '$filter', '
     // TODO: character select
     $scope.characterSelect = function(id) {
       // show selection of element
-
-      // change program to apply methods to that character
+      $scope.selectedCharacter = getCharacter(id)[0]
+      $('#' + id).addClass('selected-character');
     };
 
     // drag-drop methods

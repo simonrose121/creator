@@ -11,10 +11,10 @@ html(ng-app='creatorApp')
     #content
       .program
         .title
-          h2 program
+          h2(ng-bind='selectedCharacter.id')
         a(class='run' ng-click='run()')
         ul
-          li(ng-repeat='instruction in instructions') {{ instruction }}
+          li(ng-repeat='instruction in selectedCharacter.ins') {{ instruction }}
             a(class='remove' ng-click='remove($index)')
         .feedback(ng-bind='feedback')
       .pad

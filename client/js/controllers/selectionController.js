@@ -2,8 +2,8 @@ app.controller('selectionController', ['$scope', '$filter', 'close', function($s
   $scope.characterSelection = [];
 
   // character selection
-  $scope.characterSelection.push({id: "bunny", src: "/img/bunny.png"});
-  $scope.characterSelection.push({id: "dog", src: "/img/dog.png"})
+  $scope.characterSelection.push({id: "bunny", src: "/img/bunny.png", ins: []});
+  $scope.characterSelection.push({id: "dog", src: "/img/dog.png", ins: []})
 
   $scope.closeOptions = function() {
     close();

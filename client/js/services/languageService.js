@@ -1,32 +1,33 @@
 app.service('languageService', function() {
   var speed = 1000;
+  var currentSelector;
 
   this.move = function(direction, distance) {
     switch (direction) {
       case "up":
         var distanceString = "-=" + distance * 10;
-        $('#bunny')
+        $('#' + currentSelector)
           .animate({
             top: distanceString
         }, 1000);
         break;
       case "down":
         var distanceString = "+=" + distance * 10;
-        $('#bunny')
+        $('#' + currentSelector)
           .animate({
             top: distanceString
         }, 1000);
         break;
       case "left":
         var distanceString = "-=" + distance * 10;
-        $('#bunny')
+        $('#' + currentSelector)
           .animate({
             left: distanceString
         }, 1000);
         break;
       case "right":
         var distanceString = "+=" + distance * 10;
-        $('#bunny')
+        $('#' + currentSelector)
           .animate({
             left: distanceString
         }, 1000);
@@ -45,11 +46,12 @@ app.service('languageService', function() {
     }
   }
 
-  this.run = function(instructions) {
+  this.run = function(cha) {
     var syntaxError = false;
+    currentSelector = cha.id;
 
-    for (var i = 0; i < instructions.length; i++) {
-      var instruction = instructions[i];
+    for (var i = 0; i < cha.ins.length; i++) {
+      var instruction = cha.ins[i];
       var ins = instruction.split(/\b(?:a|the|was|\s)+\b/i)
 
       // initial setup
