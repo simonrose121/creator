@@ -34,7 +34,12 @@ app.controller('creatorController', ['$scope', '$http', '$timeout', '$filter', '
       $scope.instructions.splice(index, 1);
     };
     $scope.run = function() {
-      var error = languageService.run($scope.selectedCharacter);
+      var error;
+      for(var i = 0; i < $scope.characters.length; i++) {
+         if(error == null){
+           error = languageService.run($scope.characters[i]);
+         }
+      }
       if (error != null) {
         $scope.feedback = "that wasn't quite right";
       } else {
