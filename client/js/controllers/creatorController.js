@@ -3,14 +3,8 @@ app.controller('creatorController', ['$scope', '$http', '$timeout', '$filter', '
     $scope.isDragged = false;
     $scope.characters = [];
 
-    // default character
+    // default character with instructions
     $scope.characters.push({id: "bunny", src: "/img/bunny.png", ins:["on start", "move up 10", "move left 8"]});
-
-    // starting instructions
-    // TODO: Remove
-    // $scope.instructions.push("on start");
-    // $scope.instructions.push("move up 10");
-    // $scope.instructions.push("move left 8");
 
     // Private
     function getCharacter(id) {
@@ -21,8 +15,6 @@ app.controller('creatorController', ['$scope', '$http', '$timeout', '$filter', '
       return $scope.characters.indexOf(character);
     };
 
-    //$scope.selectedCharacter = getCharacter("bunny")[0];
-
     // Public
     $scope.submit = function() {
       if ($scope.text) {
@@ -31,12 +23,12 @@ app.controller('creatorController', ['$scope', '$http', '$timeout', '$filter', '
       }
     };
     $scope.remove = function(index) {
-      $scope.instructions.splice(index, 1);
+      $scope.selectedCharacter.ins.splice(index, 1);
     };
     $scope.run = function() {
       var error;
       for(var i = 0; i < $scope.characters.length; i++) {
-         if(error == null){
+         if(error == null) {
            error = languageService.run($scope.characters[i]);
          }
       }
@@ -60,8 +52,6 @@ app.controller('creatorController', ['$scope', '$http', '$timeout', '$filter', '
         });
       });
     };
-
-    // TODO: character select
     $scope.characterSelect = function(id) {
       // show selection of element
       $scope.selectedCharacter = getCharacter(id)[0]
@@ -85,6 +75,7 @@ app.controller('creatorController', ['$scope', '$http', '$timeout', '$filter', '
         var index = getCharacterIndex(character[0]);
         if (index != -1) {
           $scope.characters.splice(index, 1);
+          $scope.selectedCharacter = null;
         }
         $timeout(function() {
           $scope.isDragged = false;
